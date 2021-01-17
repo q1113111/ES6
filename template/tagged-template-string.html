@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .highlight {
+        padding: 2px 5px;
+        background-color: #00f;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function highlight(strings, ...values) {
+        // debugger;
+        // console.log(strings);
+        const highlighted = values.map(
+          (value) => `<span class="highlight">${value}</span>`
+        );
+        return strings.reduce((prev, curr, i) => {
+          console.log(prev, curr, highlighted[i]);
+          return `${prev}${curr}${highlighted[i] || ""}`;
+        }, "");
+        // let str = "";
+        // strings.forEach(
+        //   (string, i) => (str += `${string}${highlighted[i] || ""}`)
+        // );
+
+        // return str;
+      }
+      const user = "Mary";
+      const topic = "Learn to use mardown";
+      const sentence = highlight`${user} has commented on ${topic}`; // `裡面放html標籤也是一樣`;
+      //前後放變量 會是空字串
+      document.body.innerHTML = sentence;
+    </script>
+  </body>
+</html>

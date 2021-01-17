@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1作為構造函示,一個方法需要綁訂到對像
+      // const Person = (name, points) => {
+      //   this.name = name;
+      //   this.points = points;
+      // };
+      const Person = function (name, points) {
+        this.name = name;
+        this.points = points;
+      };
+      const jelly = new Person("jelly", 5);
+
+      Person.prototype.update = function () {
+        this.points++;
+        console.log(this.points);
+      };
+      //3需要使用arguments
+      const sum = function () {
+        return Array.from(arguments).reduce((prev, value) => prev + value, 0);
+      };
+      const sum2 = (...arg) => {
+        console.log(arg);
+        return arg.reduce((prev, value) => prev + value, 0);
+      };
+    </script>
+  </body>
+</html>

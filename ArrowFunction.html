@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numbers = [5, 6, 7, 8, 9, 10, 11];
+      const double = numbers.map(function (number) {
+        return number * 2;
+      });
+
+      const double2 = numbers.map((number, i) => {
+        return `${i}:${number}`;
+      });
+      const double3 = numbers.map((number) => number * 2);
+
+      const greet2 = (name) => console.log(name);
+
+      function greet(name) {
+        console.log(name);
+      }
+
+      const jelly = {
+        name: "jelly",
+        hobbies: ["a", "b", "c"],
+        prints() {
+          this.hobbies.map((hobby) => {
+            console.log(`${this.name} loves ${hobby}`);
+          });
+        },
+      };
+      jelly.prints();
+    </script>
+  </body>
+</html>

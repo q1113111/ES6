@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script>
+      function appendChildDiv(options = {}) {
+        const {
+          parent = "body",
+          width = "100px",
+          height = "80px",
+          backgroundColor = "pink",
+        } = options;
+        const div = document.createElement("div");
+        div.style.width = width;
+        div.style.height = height;
+        div.style.backgroundColor = backgroundColor;
+
+        document.querySelector(parent).appendChild(div);
+      }
+      appendChildDiv({
+        parent: ".container",
+        width: "200px",
+        height: "150px",
+      });
+      const Tom = {
+        name: "Tom Jones",
+        age: 25,
+        family: {
+          father: "Norah Jones",
+          mother: "Richard Jones",
+          brother: "Howard Jones",
+          sister: undefined, //只有undefiend可以有默認值
+        },
+      };
+      //   let bother = 'a'
+      //   ({bother}) = Tom.family 需加小括號
+      const father = "Dad";
+      const { father: f, mother: m, brother, sister = "hello" } = Tom.family;
+    </script>
+  </body>
+</html>

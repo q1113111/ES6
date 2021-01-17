@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function multiply(a = 5, b = 3) {
+        return a * b;
+      }
+      console.log(multiply()); //默認 a=5 b=3
+      // multiply(undefined,5)  則為5*5
+      // multiply(5) 5*3
+    </script>
+  </body>
+</html>

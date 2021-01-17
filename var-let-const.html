@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var price = 100;
+      let dis = 0.6;
+      var count;
+      if (count > 5) {
+        var discount = price * 0.6; //使用var 則會外漏 使用let const 不會
+        let dis = 0.7; // 與外面的discount 不同
+      }
+      let age = 20;
+      const id = "abc123";
+      const person = {
+        name: "sam",
+        age: 20,
+      }; // 可以透過物件去更改值 例如 person.name = 'alex';
+      const jelly = Object.freeze(person); //則無法更改值
+
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+        setTimeout(() => {
+          console.log(`i:${i}`);
+        }, 1000); //使用var i會一直等於10
+      }
+    </script>
+  </body>
+</html>
