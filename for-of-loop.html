@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      Array.prototype.first = function () {
+        return this[0];
+      };
+      const fruits = ['appale', 'banana', 'orange', 'mango'];
+      fruits.test = 'hello';
+      fruits.forEach((fruit) => {
+        // console.log(fruit);
+      });
+      //缺點不能中斷
+
+      for (let index in fruits) {
+        // console.log(fruits[index]);
+      }
+      //缺點 會被其他屬性影響
+
+      for (let fruit of fruits) {
+        if (fruit === 'banana') {
+          continue;
+        }
+        console.log(fruit);
+      }
+
+      for (let fruit of fruits) {
+        if (fruit === 'banana') {
+          continue;
+        }
+        // console.log(fruit);
+      }
+      for (let [index, fruit] of fruits.entries()) {
+        // console.log(fruit, index);
+        // 使用entries() 可以印出索引跟值
+      }
+      function sum() {
+        let total = 0;
+        for (let num of arguments) {
+          total = num + total;
+        }
+        console.log(total);
+        return total;
+      }
+      sum(1, 2, 3, 4, 5);
+    </script>
+  </body>
+</html>

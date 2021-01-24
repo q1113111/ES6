@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const number = ['one', 'two', 'three', 'four'];
+      const [one, two] = number;
+      //log: one two
+      const [one, ...two] = number;
+      //log: one ['two','three',]
+      const [one, , three] = number;
+      //log: one three;
+
+      const details = ['JellyBool', 'google.com', null];
+      // category 只有undefiend會給值
+      const [name, webiste, category = 'PHP'] = details;
+      console.log(name, webiste, category);
+
+      let a = 10;
+      let b = 20;
+      [a, b] = [b, a];
+      //log: a=20 b=10
+    </script>
+  </body>
+</html>

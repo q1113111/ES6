@@ -16,14 +16,12 @@
     <script>
       function highlight(strings, ...values) {
         // debugger;
-        // console.log(strings);
-        const highlighted = values.map(
-          (value) => `<span class="highlight">${value}</span>`
-        );
+        console.log(strings);
+        const highlighted = values.map((value) => `<span class="highlight">${value}</span>`);
         return strings.reduce((prev, curr, i) => {
-          console.log(prev, curr, highlighted[i]);
-          return `${prev}${curr}${highlighted[i] || ""}`;
-        }, "");
+          // console.log(prev, curr, highlighted[i]);
+          return `${prev}${curr}${highlighted[i] || ''}`;
+        }, '');
         // let str = "";
         // strings.forEach(
         //   (string, i) => (str += `${string}${highlighted[i] || ""}`)
@@ -31,8 +29,8 @@
 
         // return str;
       }
-      const user = "Mary";
-      const topic = "Learn to use mardown";
+      const user = 'Mary';
+      const topic = 'Learn to use mardown';
       const sentence = highlight`${user} has commented on ${topic}`; // `裡面放html標籤也是一樣`;
       //前後放變量 會是空字串
       document.body.innerHTML = sentence;

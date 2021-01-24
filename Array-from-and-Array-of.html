@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>Go to Stroe</li>
+      <li>Watch TV</li>
+      <li>GO Shopping</li>
+    </ul>
+    <script>
+      const todos = document.querySelectorAll('li');
+      const todoArr = Array.from(todos);
+      const names = todoArr.map((todo) => todo.textContent);
+      console.log(names);
+
+      function sum() {
+        return Array.from(arguments).reduce((prev, curr) => prev + curr, 0);
+      }
+      let arr1 = new Array(1);
+      let arr2 = Array.of(1);
+      console.log(arr1, arr2);
+    </script>
+  </body>
+</html>
