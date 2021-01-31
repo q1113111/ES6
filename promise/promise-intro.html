@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+   </head>
+   <body>
+      <script>
+         let userName;
+         const endpoint = 'https://api.github.com/users';
+         fetch(endpoint)
+            .then((blob) => blob.json())
+            .then((data) => {
+               userName = data[0].login;
+               return fetch(`https://api.github.com/users/${userName}/repos`);
+            })
+            .then((data) => {
+               console.log(data);
+            })
+            .catch((err) => {
+               console.error(err);
+            });
+      </script>
+   </body>
+</html>
