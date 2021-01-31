@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      h2 {
+        font-size: 5rem;
+      }
+      span {
+        display: inline-block;
+        transition: 0.5s;
+      }
+      span:hover {
+        transform: rotate(45deg) translateX(-20px);
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="heading">Hello Javascript</h2>
+    <script>
+      let heading = document.querySelector('.heading');
+      heading.innerHTML = textword(heading.textContent);
+      function textword(head) {
+        return [...head].map((word) => `<span>${word}</span>`).join('');
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const test = ['aa', 'bb', 'cc', 'dd'];
+      const test2 = ['ee', 'ff', 'gg', 'hh'];
+
+      // es5
+      const testall = test.concat(test2); // 不能直接給 =會連同第一個陣列也更改
+      let members = [];
+      members = members.concat(test);
+      members.push('abcd');
+      members = members.concat(test2);
+
+      //es6
+      const members2 = [...test, 'abcds', ...test2];
+    </script>
+  </body>
+</html>

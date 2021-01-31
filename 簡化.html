@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const name = 'Sam';
+      const age = 21;
+      const birthday = '2020,06,01';
+
+      const total = {
+        name,
+        age,
+        birthday,
+        hello() {
+          alert(`hello i am ${this.name}`);
+        },
+      };
+      console.log(total);
+
+      let id = 0;
+      const uid = {
+        [`userid-${++id}`]: id,
+        [`userid-${++id}`]: id,
+        [`ueseid-${++id}`]: id,
+      };
+      console.log(uid);
+
+      let key = ['name', 'age', 'birthday'];
+      let value = ['sam', 21, '2020.06.01'];
+
+      const obj = {
+        [key.shift()]: value.shift(),
+        [key.shift()]: value.shift(),
+        [key.shift()]: value.shift(),
+      };
+      console.log(obj);
+    </script>
+  </body>
+</html>

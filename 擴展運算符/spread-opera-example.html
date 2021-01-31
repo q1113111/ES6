@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>Go to store</li>
+      <li>Watch Tv</li>
+      <li>GO Shopping</li>
+    </ul>
+    <script>
+      const todos = [...document.querySelectorAll('li')];
+      const names = todos.map((todo) => todo.textContent);
+      console.log(names);
+
+      const favorites = {
+        color: ['blue', 'black'],
+        fruits: ['appale', 'banana'],
+      };
+      const shopping = ['milk', 'food', ...favorites.fruits];
+      console.log(shopping);
+
+      const list = [
+        { id: 1, name: 'sam', complete: false },
+        { id: 2, name: 'sheely', complete: false },
+        { id: 3, name: 'hena', complete: false },
+        { id: 4, name: 'wood', complete: false },
+      ];
+      const id = 2;
+      const listindex = list.findIndex((index) => index.id === id);
+      const newlist = [...list.slice(0, listindex), ...list.slice(listindex + 1)];
+      console.log(newlist);
+    </script>
+  </body>
+</html>

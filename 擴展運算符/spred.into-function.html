@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const fruits = ['apple', 'banna', 'pear'];
+      const newfrutis = ['oragne', 'mongo'];
+
+      //es5
+      //   fruits.push.apply(fruits, newfrutis);
+      //   console.log(fruits);
+      //es6
+      fruits.push(...newfrutis);
+      console.log(fruits);
+
+      const datafields = [2020, 5.1];
+      const data = new Date(...datafields);
+      console.log(data);
+    </script>
+  </body>
+</html>
