@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Animal {
+        constructor(name) {
+          this.name = name;
+          this.belly = [];
+        }
+
+        eat(food) {
+          this.belly.push(food);
+        }
+      }
+      //es5寫法---
+      // function Dog(name,age){
+      //   Animal.call(this,name,age);
+      //   this.name = name;
+      //   this.age = age
+      // }
+      // Dog.prototype = new Animal();
+      // Dog.prototype.consturctor = Dog;
+      //---
+      class Dog extends Animal {
+        constructor(name, age) {
+          super(name);
+          this.age = age;
+        }
+
+        bark() {
+          console.log(`Bark bark`);
+        }
+      }
+      const lucky = new Dog("lucky", 2);
+    </script>
+  </body>
+</html>

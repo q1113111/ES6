@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const User = class{}
+      let mehtod = "info2";
+      class User {
+        constructor(name, email) {
+          this.name = name;
+          this.email = email;
+        }
+
+        info() {
+          console.log(`i am ${this.name} and my email ${this.email}`);
+        }
+        [mehtod]() {
+          console.log(`I am not ${this.name} and my email not ${this.email}`);
+        }
+        //使用static 同Array.form()
+        //User.description()
+        static description() {
+          console.log("I am ES6 prototype");
+        }
+
+        set github(value) {
+          this.githubname = value;
+        }
+
+        get github() {
+          return `https://github.com/${this.githubname}`;
+        }
+      }
+
+      const codecasts = new User("sam", "@gmail.com");
+      const webpack = new User("gil", "@yaho.com.tw");
+    </script>
+  </body>
+</html>

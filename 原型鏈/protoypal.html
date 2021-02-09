@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function User(name, email) {
+        this.name = name;
+        this.email = email;
+      }
+      User.prototype.info = function () {
+        console.log(`hi i am ${this.name}`);
+      };
+      const codecasts = new User("sam", "@gmail.com");
+      const webpack = new User("gil", "@yaho.com.tw");
+
+      User.prototype.info = function () {
+        console.log(`hi i am ${this.name} and my emai is ${this.email}`);
+      };
+      User.prototype.two = function () {
+        console.log("hi I am prototype");
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const UserPormise = new Promise((reslove, reject) => {
+        setTimeout(() => {
+          reslove(["mojombo", "vanplet", "wycats"]);
+        }, 2000);
+      });
+      const movePromis = new Promise((reslove, reject) => {
+        setTimeout(() => {
+          // reslove({ name: '摔跤八 爸爸', rating: 9.2, year: 2016 });
+          reject(Error("no mover"));
+        }, 500);
+      });
+
+      Promise.all([UserPormise, movePromis])
+        .then((response) => {
+          const [user, mover] = response;
+          console.log(user, mover);
+        })
+        .catch((err) => console.error(err));
+
+      Promise.race([UserPormise, movePromis])
+        .then((response) => {
+          // const [user, mover] = response;
+          // console.log(user, mover);
+          console.log(response);
+        })
+        .catch((err) => console.error(err));
+    </script>
+  </body>
+</html>
